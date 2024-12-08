@@ -26,4 +26,8 @@ public class Aluno {
     public double calcularMedia(double nota1, double nota2, double nota3, double nota4){
         return (nota1 + nota2 + nota3 + nota4) / 4.0;
     }
+    
+    public String verificarAprovacao(double media) {
+        return media >= 6.0 ? "Aprovado" : "Reprovado";
+    }
 }
