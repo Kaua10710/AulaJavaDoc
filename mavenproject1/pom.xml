@@ -9,23 +9,47 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>23</maven.compiler.release>
+        <maven.compiler.source>17</maven.compiler.source>  <!-- Define o source do JDK -->
+        <maven.compiler.target>17</maven.compiler.target>  <!-- Define o target do JDK -->
+        <maven.compiler.release>17</maven.compiler.release> <!-- Compilação para JDK 17 -->
         <exec.mainClass>com.mycompany.Mavenproject1.Mavenproject1</exec.mainClass>
     </properties>
 
     <build>
         <plugins>
+            <!-- Plugin para compilar o código -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <source>17</source>  <!-- Define o source do JDK -->
+                    <target>17</target>  <!-- Define o target do JDK -->
+                </configuration>
+            </plugin>
+
+            <!-- Plugin para gerar o Javadoc -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.2.0</version> <!-- Verifique se está com a versão mais recente -->
+                <version>3.3.0</version>
                 <executions>
                     <execution>
                         <goals>
-                            <goal>javadoc</goal>
+                            <goal>javadoc</goal> <!-- Gera o Javadoc -->
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+
+            <!-- Plugin para executar a aplicação -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-exec-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <mainClass>${exec.mainClass}</mainClass> <!-- Definir a classe principal -->
+                </configuration>
             </plugin>
         </plugins>
     </build>
