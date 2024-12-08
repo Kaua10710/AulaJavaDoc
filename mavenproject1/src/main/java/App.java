@@ -29,6 +29,22 @@ public class App {
             // Cria o objeto aluno
             Aluno aluno = new Aluno(nome);
             double media = aluno.calcularMedia(notas[0], notas[1], notas[2], notas[3]);
+            String status = aluno.verificarAprovacao(media);
+            
+            // Exibe os resultados
+            System.out.println("\nAluno cadastrado: " + nome);
+            System.out.println("Média: " + media);
+            System.out.println("Status: " + status);
+
+            // Adiciona o aluno à lista
+            alunos.add(aluno);
          }
-     }
+          // Lista de alunos cadastrados
+        System.out.println("\n--- Resumo dos Alunos Cadastrados ---");
+        for (Aluno aluno : alunos) {
+            System.out.println("Aluno: " + aluno.getNome());
+        }
+        scanner.close();
+    }
+
 }
