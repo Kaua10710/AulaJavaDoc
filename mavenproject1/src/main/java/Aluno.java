@@ -43,14 +43,5 @@ public class Aluno {
     public String getNome() {
         return nome;
     }
-    public static void main(String[] args) {
-    //Exemplo de uso da classe 
-    Aluno aluno = new Aluno("João");
-    double media = aluno.calcularMedia(7.0, 5.5, 6.0, 8.0);
-     System.out.println("Aluno: " + aluno.getNome());
-        System.out.println("Média: " + media);
-            System.out.println("Status: " + aluno.verificarAprovacao(media));
-    
-    }
     
 }
