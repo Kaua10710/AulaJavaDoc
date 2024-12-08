@@ -11,5 +11,7 @@ public class App {
       public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         List<Aluno> alunos = new ArrayList<>();
+          System.out.println("Quantos alunos deseja cadastrar?");
+          int quantidadeAlunos = Integer.parseInt(scanner.nextLine());
       }
 }
