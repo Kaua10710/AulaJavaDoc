@@ -14,6 +14,15 @@ public class Aluno {
     public Aluno(String nome) {
         this.nome = nome;
     }
+    /**
+     * Calcula a média aritmética de quatro notas.
+     *
+     * @param nota1 Primeira nota do aluno.
+     * @param nota2 Segunda nota do aluno.
+     * @param nota3 Terceira nota do aluno.
+     * @param nota4 Quarta nota do aluno.
+     * @return A média aritmética das quatro notas.
+     */
     public double calcularMedia(double nota1, double nota2, double nota3, double nota4){
         return (nota1 + nota2 + nota3 + nota4) / 4.0;
     }
